@@ -1,0 +1,12 @@
+[Unit]
+Description=VMware Virtual Machine Communication Interface
+After=vmware-vmmon.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe vmci
+ExecStop=/sbin/modprobe -r vmci
+
+[Install]
+WantedBy=multi-user.target

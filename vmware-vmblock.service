@@ -1,0 +1,12 @@
+[Unit]
+Description=VMware Blocking File System
+After=vmware-vmci.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe vmblock
+ExecStop=/sbin/modprobe -r vmblock
+
+[Install]
+WantedBy=multi-user.target

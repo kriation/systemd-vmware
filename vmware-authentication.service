@@ -1,0 +1,11 @@
+[Unit]
+Description=VMware Authentication Daemon
+After=vmware-vmnet.service
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/usr/sbin/vmware-authdlauncher
+
+[Install]
+WantedBy=multi-user.target
