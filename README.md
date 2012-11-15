@@ -10,9 +10,9 @@ While in the process of switching, I realized that I was going to have trouble w
 * vmware-authentication.service (Authentication Daemon)
 * vmware-usb.service (USB Arbitration Service)
  
-The order in which they are started is above, with vmmon starting first, and ending with the USB Arbitration service. Any of these can be enabled/disabled based on your requirement.
+The order in which they are started is above, with vmmon starting first, and ending with the USB Arbitration service. Any of these can be enabled/disabled based on your requirement by commenting out the appropriate service in vmware.target. The only *requirement* to run workstation is vmmon. All other 'services' are optional.
  
 As I mentioned above, the items left to integrate into these scripts are:
 * Error condition checking when loading modules
 * Checking for Shared Memory
-* Implementing a single service that kicks off each of the sub-services.
+* <del>Implementing a single service that kicks off each of the sub-services.</del>
