@@ -1,6 +1,7 @@
 [Unit]
 Description=VMware USB Arbitration Service
 After=vmware-authentication.service
+PartOf=vmware.target
 
 [Service]
 Type=simple
@@ -9,4 +10,4 @@ ExecStart=/usr/bin/vmware-usbarbitrator
 ExecStop=/usr/bin/vmware-usbarbitrator --kill
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=vmware.target
