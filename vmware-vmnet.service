@@ -1,7 +1,7 @@
 [Unit]
 Description=VMware Virtual Ethernet
-Wants=network.target
 After=vmware-vmblock.service
+PartOf=vmware.target
 
 [Service]
 Type=simple
@@ -12,4 +12,4 @@ ExecStop=/usr/bin/vmware-networks --stop
 ExecStopPost=/sbin/modprobe -r vmnet
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=vmware.target
