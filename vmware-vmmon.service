@@ -1,7 +1,6 @@
 [Unit]
 Description=VMware Virtual Machine Monitor
-Wants=network.target
-After=network.target
+PartOf=vmware.target
 
 [Service]
 Type=simple
@@ -10,4 +9,4 @@ ExecStart=/sbin/modprobe vmmon
 ExecStop=/sbin/modprobe -r vmmon
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=vmware.target
