@@ -2,6 +2,7 @@
 Description=VMware Virtual Machine Communication Interface Socket Family
 Requires=vmware-vmci.service
 After=vmware-vmci.service
+PartOf=vmware.target
 
 [Service]
 Type=simple
@@ -10,4 +11,4 @@ ExecStart=/sbin/modprobe vsock
 ExecStop=/sbin/modprobe -r vsock
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=vmware.target
